@@ -1,0 +1,12 @@
+{
+  "name": "changelog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "git@github.com:vedascript/changelog.git",
+  "author": "vedansh <me.vedanshwani@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

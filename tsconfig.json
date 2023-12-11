@@ -3,6 +3,9 @@
       "sourceMap": true,
       "outDir": "dist",
       "lib": ["esnext"],
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "target":"ES6",
+      "module":"ES6",
+      "moduleResolution":"node",
     }
   }

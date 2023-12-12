@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import * as bcrypt from "bcrypt";
 
 type User = {
   username: String;
@@ -37,4 +38,12 @@ export function protect(req, res, next) {
     console.error(err);
     throwNotAuthorised(res);
   }
+}
+
+export function comparePassword(password, hash) {
+  return bcrypt.compare(password, hash);
+}
+
+export function hashPassword(password) {
+  return bcrypt.hash(password, 5);
 }

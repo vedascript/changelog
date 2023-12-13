@@ -8,7 +8,7 @@ type User = {
 
 export function createJWTToken(user: User) {
   const { username, id } = user;
-  jwt.sign({ id, username }, process.env.JWT_SECRET);
+  return jwt.sign({ id, username }, process.env.JWT_SECRET);
 }
 
 function throwNotAuthorised(res) {

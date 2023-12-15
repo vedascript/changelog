@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body, oneOf, validationResult } from "express-validator";
-import { handelePayloadErrors } from "./modules/middlewares";
+import { handelePayloadErrors } from "./modules/middlewares.ts";
 
 const router = Router();
 

@@ -18,13 +18,12 @@ function throwNotAuthorised(res) {
 }
 
 export function protect(req, res, next) {
-  const bearer = req.headers.authorisation;
+  const bearer = req.headers.authorization;
 
   if (!bearer) {
     throwNotAuthorised(res);
   }
-
-  const [, token] = bearer;
+  const [, token] = bearer.split(" ");
 
   if (!token) {
     throwNotAuthorised(res);
@@ -32,6 +31,7 @@ export function protect(req, res, next) {
 
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
+
     req.user = payload;
     next();
   } catch (err) {
